@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "target": "ES5",
+    "target": "es5",
     "skipLibCheck": true,
     "module": "commonjs",
+    "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -13,18 +14,19 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
-      "@types/*": ["./src/types/*"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@constants/*": ["./src/constants/*"],
-      "@assets/*": ["./src/assets/*"],
-      "@stories/*": ["./src/stories/*"],
-      "@store/*": ["./src/store/*"]
-    }
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@types/*": ["src/types/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@styles/*": ["src/styles/*"],
+      "@constants/*": ["src/constants/*"],
+      "@assets/*": ["src/assets/*"],
+      "@stories/*": ["src/stories/*"],
+      "@store/*": ["src/store/*"]
+    },
+    "jsxImportSource": "@emotion/react",
+    "allowSyntheticDefaultImports": true
   },
-  "jsxImportSource": "@emotion/react",
-  "exclude": ["node_modules"],
-  "include": ["src"]
+  "exclude": ["./node_modules"],
+  "include": ["./src"]
 }

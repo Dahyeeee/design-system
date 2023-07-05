@@ -1,5 +1,12 @@
 import '@emotion/react';
 
+interface TextStyle {
+  [key: string]: {
+    fontSize: string;
+    lineHeight: string;
+  };
+}
+
 declare module '@emotion/react' {
   export interface Theme {
     color: { [key: string]: string };

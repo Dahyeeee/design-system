@@ -1,9 +1,16 @@
-import { Global, ThemeProvider } from '@emotion/react';
+import { Global, ThemeProvider, css } from '@emotion/react';
+import { withThemeFromJSXProvider } from '@storybook/addon-styling';
 import type { Preview } from '@storybook/react';
 import React from 'react';
 
 import { GlobalStyle } from '../src/styles/GlobalStyle';
 import { Theme } from '../src/styles/Theme';
+
+/* TODO: update import for your custom theme configurations */
+// import { lightTheme, darkTheme } from '../path/to/themes';
+
+/* TODO: replace with your own global styles, or remove */
+const GlobalStyles = () => <Global styles={GlobalStyle} />;
 
 const preview: Preview = {
   parameters: {
@@ -20,10 +27,12 @@ const preview: Preview = {
 export default preview;
 
 export const decorators = [
-  (Story) => (
-    <ThemeProvider theme={Theme}>
-      <Global styles={GlobalStyle} />
-      <Story />
-    </ThemeProvider>
-  ),
+  withThemeFromJSXProvider({
+    themes: {
+      default: Theme,
+    },
+    defaultTheme: 'default',
+    Provider: ThemeProvider,
+    GlobalStyles,
+  }),
 ];

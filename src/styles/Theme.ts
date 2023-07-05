@@ -25,46 +25,46 @@ const color = {
 };
 
 const text = {
-  lg: {
+  large: {
     fontSize: '18px',
     lineHeight: '28px',
   },
-  md: {
+  medium: {
     fontSize: '16px',
     lineHeight: '24px',
   },
-  sm: {
+  small: {
     fontSize: '14px',
     lineHeight: '20px',
   },
-  xs: {
+  xSmall: {
     fontSize: '12px',
     lineHeight: '20px',
   },
 };
 
 const heading = {
-  xxl: {
+  xxLarge: {
     fontSize: '40px',
     lineHeight: '52px',
   },
-  xl: {
+  xLarge: {
     fontSize: '36px',
     lineHeight: '44px',
   },
-  lg: {
+  large: {
     fontSize: '32px',
     lineHeight: '40px',
   },
-  md: {
+  medium: {
     fontSize: '28px',
     lineHeight: '36px',
   },
-  sm: {
+  small: {
     fontSize: '24px',
     lineHeight: '32px',
   },
-  xs: {
+  xSmall: {
     fontSize: '20px',
     lineHeight: '28px',
   },
