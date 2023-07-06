@@ -26,8 +26,13 @@ export const getIconSizeStyling = (size: Required<FloatingButtonProps>['size']) 
       height: '24px',
     }),
     small: css({
+      //사이즈가 줄어들면서 위치가 변경되는 버그있음..
       width: '16px',
       height: '16px',
+
+      path: {
+        strokeWidth: '1',
+      },
     }),
   };
 
@@ -37,10 +42,14 @@ export const getIconSizeStyling = (size: Required<FloatingButtonProps>['size']) 
 export const getIconVariantStyling = (variant: Required<FloatingButtonProps>['variant']) => {
   const style = {
     primary: css({
-      stroke: 'white',
+      path: {
+        stroke: 'white',
+      },
     }),
     default: css({
-      stroke: 'black',
+      path: {
+        stroke: 'black',
+      },
     }),
   };
 
@@ -52,6 +61,8 @@ export const FloatingButtonStyling = css({
   justifyContent: 'center',
   alignItems: 'center',
 
+  border: 'none',
   borderRadius: '50%',
-  outline: `0 solid ${Theme.color.white}`,
+
+  cursor: 'pointer',
 });

@@ -1,3 +1,4 @@
+import AddIcon from '@assets/svg/add-icon.svg';
 import type { Size } from '@type/index';
 import type { ComponentPropsWithoutRef } from 'react';
 
@@ -24,7 +25,7 @@ const FloatingButton = ({
       css={[FloatingButtonStyling, getSizeStyling(size), getVariantStyling(variant)]}
       {...attributes}
     >
-      {/* <AddIcon css={[getIconSizeStyling(size), getIconVariantStyling(variant)]} /> */}
+      <AddIcon css={[getIconSizeStyling(size), getIconVariantStyling(variant)]} />
     </button>
   );
 };
