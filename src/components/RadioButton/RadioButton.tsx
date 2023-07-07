@@ -1,19 +1,40 @@
 import { InputHTMLAttributes } from 'react';
 
-import { RadioStyle, labelStyle } from './RadioButton.style';
+import Label from '@components/Label/Label';
+import SupportingText from '@components/SupportingText/SupportingText';
+
+import {
+  labelStyle,
+  radioContainerStyle,
+  radioStyle,
+  radioWrapperStyle,
+  textStyle,
+} from './RadioButton.style';
 
 interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
-  id: string;
-  label: string;
+  label?: string;
+  options: string[];
+  supportingText?: string;
 }
 
-const RadioButton = ({ id, label = '', ...attributes }: RadioButtonProps) => {
+const RadioButton = ({ options, label, supportingText, ...attributes }: RadioButtonProps) => {
   return (
-    <div css={RadioStyle}>
-      <input type="radio" id={id} {...attributes} />
-      <label htmlFor={id} css={labelStyle}>
-        {label}
-      </label>
+    <div css={radioContainerStyle}>
+      {label && (
+        <Label id={attributes.id} required={attributes.required}>
+          {label}
+        </Label>
+      )}
+      <div css={radioWrapperStyle}>
+        {options.map((option) => (
+          <div css={radioStyle}>
+            <input type="radio" hidden id={option} name={attributes.name} />
+            <label htmlFor={option} css={labelStyle}></label>
+            <p css={textStyle}>{option}</p>
+          </div>
+        ))}
+      </div>
+      {supportingText && <SupportingText>{supportingText}</SupportingText>}
     </div>
   );
 };
